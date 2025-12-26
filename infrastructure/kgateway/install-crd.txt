@@ -1,0 +1,35 @@
+* command:
+
+helm upgrade -i kgateway-crds oci://cr.kgateway.dev/kgateway-dev/charts/kgateway-crds --version v2.2.0-beta.1 --namespace kgateway-system --create-namespace
+------------------
+To verify that the CRDs have been installed:
+
+  kubectl get crds | grep 'kgateway'
+
+To uninstall the CRDs:
+
+  helm uninstall kgateway-crds --namespace kgateway-system
+
+
+---------------------
+* command:
+
+helm upgrade -i kgateway oci://cr.kgateway.dev/kgateway-dev/charts/kgateway --version v2.2.0-beta.1 --namespace kgateway-system --create-namespace
+
+Your release "kgateway" has been deployed in the "kgateway-system" namespace.
+
+To check the status of the deployment:
+
+  helm status kgateway --namespace kgateway-system
+
+To view the resources created by this chart:
+
+  kubectl get all -n kgateway-system
+
+To learn how to access and use kgateway, please visit the official documentation:
+
+  https://kgateway.dev/docs/
+
+To uninstall the kgateway deployment:
+
+  helm uninstall kgateway --namespace kgateway-system

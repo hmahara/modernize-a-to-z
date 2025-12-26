@@ -1,0 +1,7 @@
+kubectl api-resources --api-group=gateway.kgateway.dev
+
+kubectl get gatewayclass kgateway -o yaml | bat -l yaml
+
+final check:
+
+kubectl get pods -n kgateway-system
